@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href  =  "Index.css"/>
+    <title>Document</title>
+<body>
+
+    <!--This header will contain the Title of the page and use display flex to evenly place the three properties evenly with the title larger than the other two-->
+    <header>
+        <!--This following  div Is a button that will pop a modal of high Scores for the user it should not interfere with other fucntions of the quiz-->
+        <div class = "highscore_btn"> View Highscores</div>
+        <!--This is simply the title of the page and should stay on top of the page -->
+        <h> Coding Quiz </h>
+        <div class = "timer_display">Timer</div>
+    </header>
+
+    <main>
+        <!--This is the button that will reset the clock and start the code quiz-->
+        <div class = "start_btn">Start the Quiz?</div>
+
+        <!--This will be a place holder for  the questions that will be dynamically added in as the  javascript reads a question object it will adjust the values in the attributes
+        to dettermine the correct  option and set its attribute to true for scoring-->
+        <div class ="question" data-answerIndex= 0>
+            <p class ="promt" >This is a Question</p>
+            <p class = "answer " data-correct = false>Option-a</p>
+            <p class = "answer" data-correct = false>Option-b</p>
+            <p class = "answer" data-correct = false>Option-c</p>
+            <p class = "answer" data-correct = false>Option-d</p>
+        </div>
+
+        <!--This will either say correct or incorrect depending on the answer-->
+        <div class = "response_box">
+            <p>That was either correct or incorrect</p>
+        </div>
+
+        <div class = "end_prompt"> 
+            <p class ="name_input">Your name Here</p>
+        </div>
+
+
+
+
+
+
+    </main>
+
+    
+</body>
+</html>
