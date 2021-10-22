@@ -4,26 +4,108 @@ body
     flex-direction: column;
 }
 
-header
+/*This portion of the style sheet will be dedicated to the header, the title, and the buttons it contains*/
+    header
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 150px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    header h 
+    {
+        font-size: 3rem;
+    }
+
+    .header_buttons
+    {
+        padding: 15px;
+        width: 90%;
+        display: flex;
+        justify-content:space-between ;
+    }
+/*spacing*/
+
+/*This portion will be dedicated to styling the template that will hold the alternating questions, the start button, and the ending prompt*/
+    main 
+    {
+        margin-top: -30px;
+        width: 40%;
+        height:300px ;
+        display: flex;
+        flex-direction: column;
+        border: 5px solid gray;
+        align-items:  center;
+        align-self: center;
+        justify-content: center;
+    }
+    
+    .button
+    {
+        padding: 10px 20px;
+        color: white;
+        background-color: purple;
+        border-radius: 5px;
+    }
+
+    .start_btn
+    {
+        position: absolute;
+        z-index: 10;
+    }
+    
+    .question_container
+    {
+        position: absolute;
+        visibility: collapse;
+    }
+
+    .prompt
+    {
+        font-size: 1rem;
+        font-weight: bolder;
+    }
+
+    .feedback
+    {
+        visibility: hidden;
+    }
+/*spacing*/
+
+/*This portion will contain the footer which in this case will be a modal that displays the high scores of privious attemps*/
+footer
 {
-    width: 100%;
-    height: 100px;
-    border: 5px solid black;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-around;
+    visibility: collapse;
+
 }
 
-main 
-{
-    display: flex;
-    flex-direction: column;
-    border: 5px solid gray;
-    justify-self: center;
-    align-items:  center;
-}
 
-.start_btn
-{
-    border: 5px solid teal;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

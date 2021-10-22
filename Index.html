@@ -10,42 +10,40 @@
 
     <!--This header will contain the Title of the page and use display flex to evenly place the three properties evenly with the title larger than the other two-->
     <header>
-        <!--This following  div Is a button that will pop a modal of high Scores for the user it should not interfere with other fucntions of the quiz-->
-        <div class = "highscore_btn"> View Highscores</div>
-        <!--This is simply the title of the page and should stay on top of the page -->
-        <h> Coding Quiz </h>
-        <div class = "timer_display">Timer</div>
+        <h>Coding Quiz</h>
+        <div class = "header_buttons">
+            <div class = "highscore_btn"> View Highscores</div>
+            <div class = "timer_display">Timer</div>
+        </div>
     </header>
 
     <main>
         <!--This is the button that will reset the clock and start the code quiz-->
-        <div class = "start_btn" onclick="startTheQuiz()">Start the Quiz?</div>
+        <div class = "start_btn button" onclick="startTheQuiz()">Start the Quiz?</div>
 
         <!--This will be a place holder for  the questions that will be dynamically added in as the  javascript reads a question object it will adjust the values in the attributes
         to dettermine the correct  option and set its attribute to true for scoring-->
-        <div class ="question_container" data-answerIndex= 0>
-            <p class ="prompt" datat >This is a Question</p>
-            <p class = "answer " data-correct = false onclick="submitAnswer()">Option-a</p>
-            <p class = "answer" data-correct = false onclick="submitAnswer()">Option-b</p>
-            <p class = "answer" data-correct = false onclick="submitAnswer()">Option-c</p>
-            <p class = "answer" data-correct = false onclick="submitAnswer()">Option-d</p>
+        <div class ="question_container">
+            <p class ="prompt" >This is a Question</p>
+            <p class = "answer  button" data-correct = false onclick="submitAnswer()">Option-a</p>
+            <p class = "answer button" data-correct = false onclick="submitAnswer()">Option-b</p>
+            <p class = "answer button" data-correct = false onclick="submitAnswer()">Option-c</p>
+            <p class = "answer button" data-correct = false onclick="submitAnswer()">Option-d</p>
+            <p class = "feedback">This will be feedback</p>
         </div>
 
-        <!--This will either say correct or incorrect depending on the answer-->
-        <div class = "response_box">
-            <p>That was either correct or incorrect</p>
-        </div>
+
 
         <div class = "end_prompt"> 
-            <p class ="name_input">Your score here</p>
-        </div>
-
-
-
-
-
-
-    </main>
+            <p class ="name_input"></p>
+        </div>   
+     </main>
+    
+     <!--This footer will be where create the high score display as a pop up modal that shows up whenever the user clicks
+    on the button in the header or at the end of each quiz-->
+    <footer>
+        div
+    </footer>
     <script src = "Index.js"></script>
     
 </body>
