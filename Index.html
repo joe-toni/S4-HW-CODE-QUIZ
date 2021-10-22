@@ -19,16 +19,16 @@
 
     <main>
         <!--This is the button that will reset the clock and start the code quiz-->
-        <div class = "start_btn">Start the Quiz?</div>
+        <div class = "start_btn" onclick="startTheQuiz()">Start the Quiz?</div>
 
         <!--This will be a place holder for  the questions that will be dynamically added in as the  javascript reads a question object it will adjust the values in the attributes
         to dettermine the correct  option and set its attribute to true for scoring-->
         <div class ="question_container" data-answerIndex= 0>
             <p class ="prompt" datat >This is a Question</p>
-            <p class = "answer " data-correct = false>Option-a</p>
-            <p class = "answer" data-correct = false>Option-b</p>
-            <p class = "answer" data-correct = false>Option-c</p>
-            <p class = "answer" data-correct = false>Option-d</p>
+            <p class = "answer " data-correct = false onclick="submitAnswer()">Option-a</p>
+            <p class = "answer" data-correct = false onclick="submitAnswer()">Option-b</p>
+            <p class = "answer" data-correct = false onclick="submitAnswer()">Option-c</p>
+            <p class = "answer" data-correct = false onclick="submitAnswer()">Option-d</p>
         </div>
 
         <!--This will either say correct or incorrect depending on the answer-->
@@ -37,7 +37,7 @@
         </div>
 
         <div class = "end_prompt"> 
-            <p class ="name_input">Your name Here</p>
+            <p class ="name_input">Your score here</p>
         </div>
 
 

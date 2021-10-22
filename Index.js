@@ -72,14 +72,55 @@ const questions =
 const  questionContainer = document.querySelector(".question_container");
 const questionDisplay = questionContainer.querySelector(".prompt");
 const answerSlots = questionContainer.querySelectorAll(".answer");
+const endMessage = document.querySelector(".name_input");
 console.log(questionContainer);
 console.log(questionDisplay);
 console.log(answerSlots);
 
+//These are the variables that will be used through out our javascript function to keep track of the questions, the score and 
+//what ever else we might need
+var score  = 0;
+var index = 0;
 
-//next we are going to see if we can successfully populate the content of our elements with the contents of the objects in questions
-questionDisplay.innerHTML = questions[0].question;
-answerSlots[0].innerHTML  = questions[0].optionA;
-answerSlots[1].innerHTML  = questions[0].optionB;
-answerSlots[2].innerHTML  = questions[0].optionC;
-answerSlots[3].innerHTML  = questions[0].optionD;
+
+//we are going to establish a basic start function that will initialize the quiz with all the correct starting conditions
+function startTheQuiz()
+{
+    score = 0;
+    index = 0;
+    loadTheQuestion();
+}
+
+
+//We are going to set up an index that for now will allow us to cylcle through the questions in our questions array with the help of a submit
+//function which will be added to each of our answer options like in the demo provided
+
+
+
+function loadTheQuestion() 
+{
+    questionDisplay.innerHTML = questions[index].question;
+    answerSlots[0].innerHTML  = questions[index].optionA;
+    answerSlots[1].innerHTML  = questions[index].optionB;
+    answerSlots[2].innerHTML  = questions[index].optionC;
+    answerSlots[3].innerHTML  = questions[index].optionD;
+
+    console.log(questionContainer);
+    console.log(questionDisplay);
+    console.log(answerSlots);
+}
+
+// here we are gonna establish basic functionallity and have the test move on to the next question any time any answer is submited
+function submitAnswer()
+{
+    if(index<8)
+    {
+        index++;
+        loadTheQuestion()
+    }
+    else
+    {
+        endMessage.innerHTML = "You are done";
+    }
+}
+
