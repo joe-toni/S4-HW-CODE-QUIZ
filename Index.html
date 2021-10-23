@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href  =  "Index.css"/>
-    <title>Document</title>
+    <title>Coding Quiz</title>
 <body>
 
     <!--This header will contain the Title of the page and use display flex to evenly place the three properties evenly with the title larger than the other two-->
     <header>
-        <h>Coding Quiz</h>
+        <h1>Coding Quiz</h1>
         <div class = "header_buttons">
             <div class = "highscore_btn"> View Highscores</div>
             <div class = "timer_display">Timer</div>
@@ -32,18 +32,38 @@
             <p class = "feedback">This will be feedback</p>
         </div>
 
-
-
-        <div class = "end_prompt"> 
-            <p class ="name_input"></p>
-        </div>   
-     </main>
+        <!--This  division will contain the outling for the endgame prompt and will pop out at the end of every quiz-->
+        <div class = "game_over_screen">
+            <p class = "your_score"></p>
+            <div class = "user_name_prompt">
+                <input type="text" id ="your_name" placeholder ="enter your initials">
+                <div class ="submit_name button" onclick="submitUser()">Submit</div>
+            </div>
+        </div>
+    </main>
     
      <!--This footer will be where create the high score display as a pop up modal that shows up whenever the user clicks
-    on the button in the header or at the end of each quiz-->
+    on the button in the header or at the end of each quiz the html is set up to be ready for only ten highscores-->
     <footer>
-        div
+        <h2>Highscores</h2>
+        <div class ="score_container">
+            <p class = "highscore"></p>
+            <p class = "highscore"></p>
+            <p class = "highscore"></p>
+            <p class = "highscore"></p>
+            <p class = "highscore"></p>
+            <p class = "highscore"></p>
+            <p class = "highscore"></p>
+            <p class = "highscore"></p>
+            <p class = "highscore"></p>
+            <p class = "highscore"></p>
+        </div>
+        
+        <div class = footer_buttons>
+            <div class = "reset_test_btn button" onclick="startTheQuiz()">Reset Test</div>
+            <div class = "clear_scores_btn button">Clear Highscores</div>
     </footer>
+
     <script src = "Index.js"></script>
     
 </body>

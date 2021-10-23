@@ -1,8 +1,20 @@
-body
-{
-    display:flex;
-    flex-direction: column;
-}
+/*This portion of the styling page should contain most the styles that will affect the entire page or elements found though
+out the whole page*/
+    body
+    {
+        display:flex;
+        flex-direction: column;
+    }   
+
+    .button
+        {
+            margin: 15px;
+            padding: 10px 20px;
+            color: white;
+            background-color: purple;
+            border-radius: 5px;
+        }
+/*spacing*/
 
 /*This portion of the style sheet will be dedicated to the header, the title, and the buttons it contains*/
     header
@@ -45,13 +57,7 @@ body
         justify-content: center;
     }
     
-    .button
-    {
-        padding: 10px 20px;
-        color: white;
-        background-color: purple;
-        border-radius: 5px;
-    }
+ 
 
     .start_btn
     {
@@ -65,8 +71,9 @@ body
         visibility: collapse;
     }
 
-    .prompt
+    .game_over_screen
     {
+        visibility: collapse;
         font-size: 1rem;
         font-weight: bolder;
     }
@@ -78,12 +85,27 @@ body
 /*spacing*/
 
 /*This portion will contain the footer which in this case will be a modal that displays the high scores of privious attemps*/
-footer
-{
-    visibility: collapse;
+    footer
+    {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        z-index: -10;
+        visibility: collapse;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        align-items: center;
+        background-color: grey;
+    }
 
-}
-
+    .footer_buttons
+    {
+        display: flex;
+    }
+/*spacing*/
 
 
 
