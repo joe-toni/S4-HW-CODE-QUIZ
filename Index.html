@@ -12,7 +12,7 @@
     <header>
         <h1>Coding Quiz</h1>
         <div class = "header_buttons">
-            <div class = "highscore_btn"> View Highscores</div>
+            <div class = "highscore_btn"onclick = "displayHighScores()"> View Highscores</div>
             <div class = "timer_display">Timer</div>
         </div>
     </header>
@@ -60,8 +60,8 @@
         </div>
         
         <div class = footer_buttons>
-            <div class = "reset_test_btn button" onclick="startTheQuiz()">Reset Test</div>
-            <div class = "clear_scores_btn button">Clear Highscores</div>
+            <div class = "reset_test_btn button" onclick="reset()">Reset Test</div>
+            <div class = "clear_scores_btn button" onclick="clearHighScores()">Clear Highscores</div>
     </footer>
 
     <script src = "Index.js"></script>

@@ -94,34 +94,41 @@
 //spacing
 
 //Persisting HighScores
-    //This section establishes the global variable we will use to save all the high scores as an empty array, it then calls on a funtion to determine if local storage already has some scores saved on an object.
+    
+    //This portion sets up a local global variable that will hold an array of previous user names and scores it also calls on two functions to setup our local storage object
     var highScores = [];
-    storageSettup();
-    function storageSettup()
+    console.log(highScores);
+    checkStorage();
+    pullStorage();
+    
+    //This function is called every time the page is reloaded and is used to make sure that local storage always contains the object we will use to persist our users data.
+    function checkStorage()
     {
-        //This first if statement should assure that our local storage object exists and is meant catch at the start of  a new users playthrough
         if (localStorage.getItem("highScores") === null)
         {
              localStorage.setItem("highScores", JSON.stringify(highScores));        
         }
-        //This else if  statement should also catch at the begining of a playthrough but will populate our local variable with pre existing high scores
-        else if (!started)
-        {
-            let savedScores = JSON.parse(localStorage.getItem("highScores"));
-            for (let i = 0; i < savedScores.length; i++)
-            {
-                highScores.push(savedScores[i]);
-                console.log(highScores);
-            }
-        }
-        //This is meant to catch at the end of a playthrough and is simply meant to push a new list of scores when the player enters their new informa
-        else
-        {
-            localStorage.setItem("highScores", JSON.stringify(highScores));        
+    };
 
+    //This function is called every time the page is reloaded and supposed to populate our initially empty array with what ever content is in our local storage object.
+    function pullStorage()
+    {
+        let savedScores = JSON.parse(localStorage.getItem("highScores"));
+        for (let i = 0; i < savedScores.length; i++)
+        {
+            highScores.push(savedScores[i]);
         }
+    };
 
-    }
+    //This function is meant to make sure now repeated data is push into local storage, since our local array should contain all old and new values here we clear the 
+    //storage entirely and reset the object with a stringified version of our updated highScores array.
+    function updateStorage()
+    {
+        localStorage.clear();
+        localStorage.setItem("highScores",JSON.stringify(highScores));
+        console.log(highScores);
+    };
+
 //spacing
 
 //Random Index Generator
@@ -156,8 +163,6 @@
 
             highScoreBoard.style.visibility = "collapse";
             highScoreBoard.style.zIndex = -10;
-
-            storageSettup();
             scramble();
             started = true;
             score = 0;
@@ -232,7 +237,8 @@
              hScore: score
          };
          highScores.push(newHighScore);
-         storageSettup();
+         sortScores(highScores);
+         updateStorage();
          gameOver.style.visibility = "collapse";
          gameOver.style.zIndex = -10;
          displayHighScores();
@@ -243,11 +249,62 @@
      //This object will take the first ten objects from our local storage created list of scores and display them by filling in their designated slots in the html file.
      function displayHighScores()
      {
-         for (let i = 0; i < highScores.length&& i < 10; i++)
+         if (highScores.length === 0)
          {
-             highScoreSlots[i].innerHTML = `${highScores[i].name} : ${highScores[i].hScore}`;
+             for(let i = 0; i < 10; i++)
+             {
+                 highScoreSlots[i].innerHTML = null;
+             }
          }
+         else
+         {
+            for (let i = 0; i < highScores.length&& i < 10; i++)
+            {
+                highScoreSlots[i].innerHTML = `${highScores[i].name} : ${highScores[i].hScore}`;
+            }
+        }
          highScoreBoard.style.visibility = "visible";
          highScoreBoard.style.zIndex = 10;
+
      }
 //spacing
+
+function clearHighScores()
+{
+    localStorage.clear()
+    while (highScores.length > 0)
+        {
+            highScores.pop()
+        }
+  
+    updateStorage();
+    displayHighScores();
+}
+
+function sortScores(array)
+{
+    let sorted = false;
+    if (array.length>1 && !sorted)
+    {
+         while(!sorted)
+         {
+             sorted = true;
+             for (let i = 1; i < array.length; i++)
+             { 
+                 if ((array[i-1].hScore) < ( array[i].hScore))
+                 {
+                     sorted = false;
+                     tempName = array[i-1].name;
+                     tempScore = array[i-1].hScore;
+                     array[i-1].name = array[i].name;
+                     array[i-1].hScore = array[i].hScore;
+                     array[i].name = tempName;
+                     array[i].hScore = tempScore;
+                }
+            }
+        }
+    }
+}
+
+function reset()
+{location.reload()}
