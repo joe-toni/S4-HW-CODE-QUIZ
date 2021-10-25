@@ -10,16 +10,26 @@
 
     <!--This header will contain the Title of the page and use display flex to evenly place the three properties evenly with the title larger than the other two-->
     <header>
-        <h1>Coding Quiz</h1>
+       
         <div class = "header_buttons">
             <div class = "highscore_btn"onclick = "displayHighScores()"> View Highscores</div>
-            <div class = "timer_display">Timer</div>
+            <div class = "timer_display">
+                <p>Timer</p>
+                <p class = "clock">: 60</p>
+            </div>
         </div>
     </header>
 
     <main>
         <!--This is the button that will reset the clock and start the code quiz-->
+        <div class = "starting_screen"> 
+            <h1>Coding Quiz Challenge</h1>
+            <p>This is a quiz  that will run on a timer, finishing the test before time runs out will stop the clock, and
+            getting an answer wrong will take away 3 secounds of the total time remaining. At the end of the test you will be asked
+            for your name, and your score will be saved. If it is in the top ten it will be displayed on the screen for highscores. You can 
+            got to the high score screen at any time but doing so will cause the test to reset</p>
         <div class = "start_btn button" onclick="startTheQuiz()">Start the Quiz?</div>
+        </div>
 
         <!--This will be a place holder for  the questions that will be dynamically added in as the  javascript reads a question object it will adjust the values in the attributes
         to dettermine the correct  option and set its attribute to true for scoring-->
@@ -41,6 +51,7 @@
             </div>
         </div>
     </main>
+    <ol
     
      <!--This footer will be where create the high score display as a pop up modal that shows up whenever the user clicks
     on the button in the header or at the end of each quiz the html is set up to be ready for only ten highscores-->

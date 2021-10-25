@@ -4,74 +4,173 @@
     const questions =  
     [
     {
-    question : "This is question #1",
+    question : "What does HTML stand for?",
     answerIndex: 0,
-    optionA: "A.) answer1a",
-    optionB: "B.) answer1b",
-    optionC: "C.) answer1c",
-    optionD: "D.) answer1d"
+    optionA: "A.) Hyper Text Markup Language (correct)",
+    optionB: "B.) Hyperlinks and Text Markup Language",
+    optionC: "C.) Home Tool Markup Language",
+    optionD: "D.) None of the above."
     },
     {
-    question : "This is question #2",
+    question : "What is the correct HTML for creating a hyperlink?",
     answerIndex: 1,
-    optionA: "A.) answer2a",
-    optionB: "B.) answer2b",
-    optionC: "C.) answer2c",
-    optionD: "D.) answer2d"
+    optionA: "A.) &lta name = “http://www.someRandomSite.com”&gt Random Site &lt/a&gt",
+    optionB: "B.) &lta href = “http://www.someRandomSite.com”&gt Random Site &lt/a&gt(correct)",
+    optionC: "C.) &lta url = “http://www.someRandomSite.com”&gt Random Site &lt/a&gt",
+    optionD: "D.) &lta&gt“http://www.someRandomSite.com”&gt Random Site &lt/a&gt"
     },
     {
-    question : "This is question #3",
+    question : "How can you make a numbered List?",
     answerIndex: 2,
-    optionA: "A.) answer3a",
-    optionB: "B.) answer3b",
-    optionC: "C.) answer3c",
-    optionD: "D.) answer3d"
+    optionA: "A.) &ltdl&gt",
+    optionB: "B.) &ltlist&gt",
+    optionC: "C.) &ltol&gt(correct)",
+    optionD: "D.) &ltul&gt"
     },
     {
-    question : "This is question #4",
-    answerIndex: 3,
-    optionA: "A.) answer4a",
-    optionB: "B.) answer4b",
-    optionC: "C.) answer4c",
-    optionD: "D.) answer4d"
+    question : "What is the correct HTML for making a checkbox?",
+    answerIndex: 2,
+    optionA: "A.) &ltcheckbox&gt",
+    optionB: "B.) &ltinput type = “check”&gt",
+    optionC: "C.) &ltinput type = “checkbox&gt(correct)",
+    optionD: "D.) &ltcheck&gt"
     },
     {
-    question : "This is question #5",
+    question : "What is the correct HTML for making a text area?",
+    answerIndex: 2,
+    optionA: "A.) &ltinput type = “textarea”&gt",
+    optionB: "B.) &ltinput type = “textbox”&gt",
+    optionC: "C.) &lttextarea&gt(correct)",
+    optionD: "D.) None of the Above."
+    },
+    {
+    question : "What is the correct HTML element for playing video files?",
+    answerIndex: 2,
+    optionA: "A.) &ltmedia&gt",
+    optionB: "B.) &ltmovie&gt",
+    optionC: "C.) &ltvideo&gt(correct)",
+    optionD: "D.) None of the Above."
+    },
+    {
+    question : "What is the correct HTML element for playing audio files?",
     answerIndex: 0,
-    optionA: "A.) answer5a",
-    optionB: "B.) answer5b",
-    optionC: "C.) answer5c",
-    optionD: "D.) answer5d"
+    optionA: "A.) &ltaudio&gt (correct)",
+    optionB: "B.) &ltmp3&gt",
+    optionC: "C.) &ltsound&gt",
+    optionD: "D.) None of the Above."
     },
     {
-    question : "This is question #6",
-    answerIndex: 1,
-    optionA: "A.) answer6a",
-    optionB: "B.) answer6b",
-    optionC: "C.) answer6c",
-    optionD: "D.) answer6d"
-    },
-    {
-    question : "This is question #7",
-    answerIndex: 2,
-    optionA: "A.) answer7a",
-    optionB: "B.) answer7b",
-    optionC: "C.) answer7c",
-    optionD: "D.) answer7d"
-    },
-    {
-    question : "This is question #8",
+    question : "What does CSS stand for?",
     answerIndex: 3,
-    optionA: "A.) answer8a",
-    optionB: "B.) answer8b",
-    optionC: "C.) answer8c",
-    optionD: "D.) answer8d"
+    optionA: "A.) Colorful Style Sheets",
+    optionB: "B.) Computer Style Sheets",
+    optionC: "C.) Creative Style Sheets",
+    optionD: "D.) Cascading Style Sheets(correct)"
+    },
+    {
+    question : "Which is the correct CSS syntax?",
+    answerIndex: 0,
+    optionA: "A.) body{color:black;}(correct)",
+    optionB: "B.) body:color=black;",
+    optionC: "C.) {body:color=black;}",
+    optionD: "D.) {body:color:black;}"
+    },
+    {
+    question : "What is the correct CSS syntax for making all the &ltp&gt elements bold?",
+    answerIndex: 3,
+    optionA: "A.) &ltp style= “font-size:bold;”&gt",
+    optionB: "B.) p{text-size:bold;}",
+    optionC: "C.) &ltp style= “text-size:bold;”&gt",
+    optionD: "D.) p{font-weight:bold;}(correct)"
+    },
+    {
+    question : "How do you make each work in a text start with a capital letter?",
+    answerIndex: 3,
+    optionA: "A.) text-style:capitalize",
+    optionB: "B.) transform:capitalize",
+    optionC: "C.) You can’t do that with CSS",
+    optionD: "D.) text-transform:capitalize (correct)"
+    },
+    {
+    question : "How do you make a list that lists its items with squares?",
+    answerIndex: 0,
+    optionA: "A.) list-style-type: square; (correct)",
+    optionB: "B.) list-type: square;",
+    optionC: "C.) list: square;",
+    optionD: "D.) list-decoration-type: square;"
+    },
+    {
+    question : "How do you group selector in CSS?",
+    answerIndex: 1,
+    optionA: "A.) You can’t group selectors in CSS",
+    optionB: "B.) Separate each selector with a comma (correct)",
+    optionC: "C.) Separate each selector with a space",
+    optionD: "D.) Separate each selector with a plus sign"
+    },
+    {
+    question : "How do you write “Hello World” in an alert box?",
+    answerIndex: 1,
+    optionA: "A.) msg(“Hello World”);",
+    optionB: "B.) alert(“Hello World”); (correct)",
+    optionC: "C.) alertBox(“Hello World”);",
+    optionD: "D.) msgBox(“Hello World”);"
+    },
+    {
+    question : "How do you create a function in JavaScript?",
+    answerIndex: 1,
+    optionA: "A.) function = myFunction()",
+    optionB: "B.) function myFunction() (correct)",
+    optionC: "C.) function:myFunction()",
+    optionD: "D.) myFunction = function()"
+    },
+    {
+    question : "How do you write an IF statement in JavaScript?",
+    answerIndex: 2,
+    optionA: "A.) if i = 5 then",
+    optionB: "B.) if i == 5 then",
+    optionC: "C.) if(i == 5) (correct)",
+    optionD: "D.) if i = 5"
+    },
+    {
+    question : "What is the correct way to write a JavaScript array?",
+    answerIndex: 2,
+    optionA: "A.) var colors = “red”, “green”, “blue”",
+    optionB: "B.) var colors = (1:”red”, 2:”green”, 3:”blue”)",
+    optionC: "C.) var colors = [“red”, “green”, “blue”] (correct)",
+    optionD: "D.) var colors = 1 = (“red”), 2 = (“green”), 3 = (“blue”)"
+    },
+    {
+    question : "How can you detect the client’s browser name?",
+    answerIndex: 1,
+    optionA: "A.) brower.name",
+    optionB: "B.) navigator.appName (correct)",
+    optionC: "C.) client.navName",
+    optionD: "D.) this.name"
+    },
+    {
+    question : "Which operator is used to assign a value to a variable?",
+    answerIndex: 0,
+    optionA: "A.) = (correct) ",
+    optionB: "B.) * ",
+    optionC: "C.) - ",
+    optionD: "D.) x "
+    },
+    {
+    question : "Which event occurs when the user click on an HTML element?",
+    answerIndex: 0,
+    optionA: "A.) onclick (correct)",
+    optionB: "B.) onchange",
+    optionC: "C.) onmouseover",
+    optionD: "D.) onmouseclick"
     }
     ];
 //spacing
 
  //Query Selected HTML Elements
     //This portion contains all the elements we pulled from our Index.html file and set them as global variables for reference through out the script
+    const timer = document.querySelector(".clock");
+
+    const startScreen = document.querySelector(".starting_screen");
     const startBtn = document.querySelector(".start_btn");
 
     const  questionContainer = document.querySelector(".question_container");
@@ -86,12 +185,17 @@
     const highScoreSlots = highScoreBoard.querySelectorAll(".highscore")
 //spacing
 
+
+
 //Global Variables
     //These are some of the simpler variables that we will use through out the script to keep track of  whether the test has started, what question we are on for reference, and the players score.
+    var time = 60;
     var started = false;
+    var finished = false;
     var score  = 0;
     var index = 0;  
 //spacing
+
 
 //Persisting HighScores
     
@@ -100,7 +204,6 @@
     console.log(highScores);
     checkStorage();
     pullStorage();
-    
     //This function is called every time the page is reloaded and is used to make sure that local storage always contains the object we will use to persist our users data.
     function checkStorage()
     {
@@ -133,7 +236,7 @@
 
 //Random Index Generator
     //This portion of the code will allow us to ask our preset questions in a random order every time we run the test
-    var questionsIndex = [0,1,2,3,4,5,6,7];
+    var questionsIndex = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
     scramble();
     function scramble() 
     {
@@ -152,8 +255,9 @@
     // new starts and retrys, and that the index and score are reset for a new test.
     function startTheQuiz()
         {
-            startBtn.style.visibility = "collapse";
-            startBtn.style.zIndex = -10;
+            //setInterval(runClock,1000);
+            startScreen.style.visibility = "collapse";
+            startScreen.style.zIndex = -10;
 
             questionContainer.style.visibility = "visible";
             questionContainer.style.zIndex = 10;
@@ -206,8 +310,16 @@
                     if(submission.dataset.correct === "true")
                     {
                         score++;
+                     }
+                     else
+                     {
+                        time -=5;
+                        timer.innerHTML = `: ${time}`;
+
                      };
+                     finished = true;
                      questionContainer.style.visibility = "collapse";
+                     questionContainer.style.zIndex = -10;
                      gameOver.style.visibility = "visible";
                      gameOver.style.zIndex = 10;
                      gameOverScore.innerHTML = `You are done, your score is ${score}.`;
@@ -218,7 +330,12 @@
                     if(submission.dataset.correct === "true")
                     {
                         score++;
-                     };
+                     }
+                     else
+                     {
+                         time -=5;
+                         timer.innerHTML = `: ${time}`;
+                     }
                      index++;
                      loadTheQuestion()
                 }
@@ -308,3 +425,22 @@ function sortScores(array)
 
 function reset()
 {location.reload()}
+
+function runClock()
+{
+    if(time > 0 && !finished)
+    {  
+        timer.innerHTML = `: ${time}`;
+        time--;
+    }
+    else if(!finished)
+    {
+        timer.innerHTML = `: ${time}`;
+        questionContainer.style.visibility = "collapse";
+        questionContainer.style.zIndex = -10;
+        gameOver.style.visibility = "visible";
+        gameOver.style.zIndex = 10;
+        gameOverScore.innerHTML = `Time is up, your score is ${score}.`;
+    }
+}
+
