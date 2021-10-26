@@ -8,7 +8,7 @@
     <title>Coding Quiz</title>
 <body>
 
-    <!--This header will contain the Title of the page and use display flex to evenly place the three properties evenly with the title larger than the other two-->
+    <!--This header will contain button that will allow the user to view the top ten saved highScores and also house the timmer-->
     <header>
        
         <div class = "header_buttons">
@@ -21,11 +21,11 @@
     </header>
 
     <main>
-        <!--This is the button that will reset the clock and start the code quiz-->
+        <!--This division will hold the opening title and explanation paragraph as well as the start button for begining the quiz-->
         <div class = "starting_screen"> 
             <h1>Coding Quiz Challenge</h1>
             <p>This is a quiz  that will run on a timer, finishing the test before time runs out will stop the clock, and
-            getting an answer wrong will take away 3 secounds of the total time remaining. At the end of the test you will be asked
+            getting an answer wrong will take away 5 secounds of the total time remaining. At the end of the test you will be asked
             for your name, and your score will be saved. If it is in the top ten it will be displayed on the screen for highscores. You can 
             got to the high score screen at any time but doing so will cause the test to reset</p>
         <div class = "start_btn button" onclick="startTheQuiz()">Start the Quiz?</div>
@@ -34,26 +34,25 @@
         <!--This will be a place holder for  the questions that will be dynamically added in as the  javascript reads a question object it will adjust the values in the attributes
         to dettermine the correct  option and set its attribute to true for scoring-->
         <div class ="question_container">
-            <p class ="prompt" >This is a Question</p>
+            <h2 class ="prompt" >This is a Question</h2>
             <p class = "answer  button" data-correct = false onclick="submitAnswer()">Option-a</p>
             <p class = "answer button" data-correct = false onclick="submitAnswer()">Option-b</p>
             <p class = "answer button" data-correct = false onclick="submitAnswer()">Option-c</p>
             <p class = "answer button" data-correct = false onclick="submitAnswer()">Option-d</p>
-            <p class = "feedback">This will be feedback</p>
         </div>
 
         <!--This  division will contain the outling for the endgame prompt and will pop out at the end of every quiz-->
         <div class = "game_over_screen">
             <p class = "your_score"></p>
             <div class = "user_name_prompt">
-                <input type="text" id ="your_name" placeholder ="enter your initials">
+                <input type="text" id ="your_name" placeholder ="Enter your Name">
                 <div class ="submit_name button" onclick="submitUser()">Submit</div>
             </div>
         </div>
     </main>
-    <ol
     
-     <!--This footer will be where create the high score display as a pop up modal that shows up whenever the user clicks
+    
+     <!-- This footer will be where create the high score display as a pop up modal that shows up whenever the user clicks
     on the button in the header or at the end of each quiz the html is set up to be ready for only ten highscores-->
     <footer>
         <h2>Highscores</h2>

@@ -185,8 +185,6 @@
     const highScoreSlots = highScoreBoard.querySelectorAll(".highscore")
 //spacing
 
-
-
 //Global Variables
     //These are some of the simpler variables that we will use through out the script to keep track of  whether the test has started, what question we are on for reference, and the players score.
     var time = 60;
@@ -255,7 +253,7 @@
     // new starts and retrys, and that the index and score are reset for a new test.
     function startTheQuiz()
         {
-            //setInterval(runClock,1000);
+            setInterval(runClock,1000);
             startScreen.style.visibility = "collapse";
             startScreen.style.zIndex = -10;
 
@@ -296,7 +294,7 @@
 
 //Answer Submission And Quiz Progression
     //This function will get the element that was clicked and after determining if the test is in progress and the proceed to check if the current submission
-    //is the final question, or not pushing the game to a game over screen if yes.
+    //is the last question
     function submitAnswer()
         {
             let submission = event.target;
@@ -314,7 +312,10 @@
                      else
                      {
                         time -=5;
-                        timer.innerHTML = `: ${time}`;
+                        if(time<0)
+                        {timer.innerHTML = ": 0";}
+                        else
+                        {timer.innerHTML = `: ${time}`;}
 
                      };
                      finished = true;
@@ -324,7 +325,7 @@
                      gameOver.style.zIndex = 10;
                      gameOverScore.innerHTML = `You are done, your score is ${score}.`;
                 }
-                //This simply check to see if the current submission is the correct answer and incramenting the index before reseting the questions
+                //This runs if there are still more questions to be answered moving the index along so that each question can be reloaded
                else 
                 {
                     if(submission.dataset.correct === "true")
@@ -333,8 +334,11 @@
                      }
                      else
                      {
-                         time -=5;
-                         timer.innerHTML = `: ${time}`;
+                        time -=5;
+                        if(time<0)
+                        {timer.innerHTML = ": 0";}
+                        else
+                        {timer.innerHTML = `: ${time}`;}
                      }
                      index++;
                      loadTheQuestion()
@@ -348,6 +352,13 @@
     // local array of user names and scores object.
      function submitUser()
      {
+         console.log(userName.value);
+         if(userName.value == '')
+         {
+             userName.placeholder = "Can not be left Blank"
+         }
+         else
+         {
          let newHighScore = 
          {
              name: userName.value,
@@ -359,17 +370,20 @@
          gameOver.style.visibility = "collapse";
          gameOver.style.zIndex = -10;
          displayHighScores();
+        }
      }
 //spacing
 
 //Display High Scores
-     //This object will take the first ten objects from our local storage created list of scores and display them by filling in their designated slots in the html file.
+     //This object will take the first ten objects from our local storage created list of scores and display them by filling in their designated slots in the html file and displaying nothing
+     // if our list of scores are empty.
      function displayHighScores()
      {
          if (highScores.length === 0)
          {
              for(let i = 0; i < 10; i++)
              {
+                 highScoreSlots[i].style.display = "none";
                  highScoreSlots[i].innerHTML = null;
              }
          }
@@ -377,7 +391,8 @@
          {
             for (let i = 0; i < highScores.length&& i < 10; i++)
             {
-                highScoreSlots[i].innerHTML = `${highScores[i].name} : ${highScores[i].hScore}`;
+                highScoreSlots[i].style.display = "block";
+                highScoreSlots[i].innerHTML = `${highScores[i].name} - ${highScores[i].hScore}`;
             }
         }
          highScoreBoard.style.visibility = "visible";
@@ -386,61 +401,73 @@
      }
 //spacing
 
-function clearHighScores()
-{
-    localStorage.clear()
-    while (highScores.length > 0)
-        {
-            highScores.pop()
-        }
-  
-    updateStorage();
-    displayHighScores();
-}
-
-function sortScores(array)
-{
-    let sorted = false;
-    if (array.length>1 && !sorted)
+//Clearing the Score Board
+    //Thi function makes sure that no scores are saved either on our local varaible or on the local storage
+    function clearHighScores()
     {
-         while(!sorted)
-         {
-             sorted = true;
-             for (let i = 1; i < array.length; i++)
-             { 
-                 if ((array[i-1].hScore) < ( array[i].hScore))
-                 {
-                     sorted = false;
-                     tempName = array[i-1].name;
-                     tempScore = array[i-1].hScore;
-                     array[i-1].name = array[i].name;
-                     array[i-1].hScore = array[i].hScore;
-                     array[i].name = tempName;
-                     array[i].hScore = tempScore;
+        localStorage.clear()
+        while (highScores.length > 0)
+            {
+                highScores.pop()
+            }
+        
+        updateStorage();
+        displayHighScores();
+    }
+//spacing
+
+//Sorting HighScores
+    //This function will use bubble sort to sort our local array of names and highscores in order from highest to lowest
+    function sortScores(array)
+    {
+        let sorted = false;
+        if (array.length>1 && !sorted)
+        {
+             while(!sorted)
+             {
+                 sorted = true;
+                 for (let i = 1; i < array.length; i++)
+                 { 
+                     if ((array[i-1].hScore) < ( array[i].hScore))
+                     {
+                         sorted = false;
+                         tempName = array[i-1].name;
+                         tempScore = array[i-1].hScore;
+                         array[i-1].name = array[i].name;
+                         array[i-1].hScore = array[i].hScore;
+                         array[i].name = tempName;
+                         array[i].hScore = tempScore;
+                    }
                 }
             }
         }
     }
-}
+//spacing
 
-function reset()
-{location.reload()}
-
-function runClock()
-{
-    if(time > 0 && !finished)
-    {  
-        timer.innerHTML = `: ${time}`;
-        time--;
-    }
-    else if(!finished)
+//Keeping Time
+    //This function runs every second after being established in the start test function and counts down from a set global variable
+    //Setting the game over screen if time runs out or stoping the clock if the test is completed
+    function runClock()
     {
-        timer.innerHTML = `: ${time}`;
-        questionContainer.style.visibility = "collapse";
-        questionContainer.style.zIndex = -10;
-        gameOver.style.visibility = "visible";
-        gameOver.style.zIndex = 10;
-        gameOverScore.innerHTML = `Time is up, your score is ${score}.`;
+        if(time > 0 && !finished)
+        {  
+            timer.innerHTML = `: ${time}`;
+            time--;
+        }
+        else if(!finished)
+        {
+            timer.innerHTML = `: 0`;
+            questionContainer.style.visibility = "collapse";
+            questionContainer.style.zIndex = -10;
+            gameOver.style.visibility = "visible";
+            gameOver.style.zIndex = 10;
+            gameOverScore.innerHTML = `Time is up, your score is ${score}.`;
+        }
     }
-}
+//spacing
 
+//This is a cheat function that is called from the highScore board either at the end of each test or whenever the 
+//highscore board is closed it resets the window where all the correct starting conditions should be checked for or set up by the 
+//default way the app is run
+    function reset()
+{location.reload()}

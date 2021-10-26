@@ -1,4 +1,4 @@
-/*This portion of the styling page should contain most the styles that will affect the entire page or elements found though
+/*This portion of the styling page should contain most the styles that will affect either the entire page or elements found though
 out the whole page*/
     body
     {
@@ -13,6 +13,13 @@ out the whole page*/
             color: white;
             background-color: purple;
             border-radius: 5px;
+        }
+
+        .button:hover
+        {
+            padding: 11px 21px;
+            cursor: pointer;
+            box-shadow: 1px 2px   plum;
         }
 /*spacing*/
 
@@ -38,6 +45,11 @@ out the whole page*/
         justify-content:space-between ;
     }
 
+    .highscore_btn:hover
+    {
+        cursor: pointer;
+    }
+
     .timer_display
     {
         display: flex;
@@ -47,7 +59,6 @@ out the whole page*/
 /*This portion will be dedicated to styling the template that will hold the alternating questions, the start button, and the ending prompt*/
     main 
     {
-        margin-top: -75px;
         width: 40%;
         height:300px ;
         display: flex;
@@ -84,6 +95,11 @@ out the whole page*/
         visibility: collapse;
     }
 
+    .answer
+    {
+        width:fit-content;
+    }
+
     .game_over_screen
     {
         position: absolute;
@@ -92,10 +108,6 @@ out the whole page*/
         font-weight: bolder;
     }
 
-    .feedback
-    {
-        visibility: hidden;
-    }
 /*spacing*/
 
 /*This portion will contain the footer which in this case will be a modal that displays the high scores of privious attemps*/
@@ -112,11 +124,15 @@ out the whole page*/
         width: 100%;
         overflow: auto;
         align-items: center;
-        background-color: grey;
+        background-color: white;
     }
 
     .highscore
     {
+        display: none;
+        border-radius: 5px;
+        padding:5px;
+        width: 200px;
         background-color: rgb(221, 160, 221, 0.6);
     }
 
